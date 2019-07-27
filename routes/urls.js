@@ -23,18 +23,42 @@ router.get("/cadastro",(req,resp)=>{
 
 router.post("/cadastro",(req,resp)=>{
 
-    /*
-    {"nome":"dhdb",
-    "sobrenome":"gj",
-    "senha":"",
-    "re-senha":"",
-    "cep":"6768",
-    "endereco":"gjyh",
-    "numero":"757",
-    "detalhe":"57hg"}
-    */
+    var nome = req.body.nome;
+    var sobrenome = req.body.sobrenome;
+    var senha = req.body.senha;
+    var resenha = req.body.resenha;
+    var cpf = req.body.cpf;
+    var cep = req.body.cep;
+    var estado = req.body.estado;
+    var cidade = req.body.cidade;
+    var numero = req.body.numero;
+    var detalhe = req.body.detalhe;
 
-    
+    const newPeople = {
+        nome,
+        sobrenome,
+        senha,
+        cpf,
+        cep,
+        estado,
+        cidade,
+        numero,
+        detalhe
+    }
+
+    new People(newPeople).save()
+    .then(()=>{
+        console.log("Cadastrado")
+        resp.redirect("/login")
+    })
+    .catch((error)=>{
+        console.log(`Error: ${error}`)
+        resp.render("cadastro",{
+            title : "Cadastro do Sistema Escolar",
+            content: newPeople
+        })
+    })
+
     resp.redirect("/login")
 })
 

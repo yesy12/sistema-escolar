@@ -1,16 +1,16 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const Pessoa = {
-    nome: {
+const People = {
+    name: {
         type: String,
         required: true
     },
-    sobrenome: {
+    lastName: {
         type: String,
         required: true
     },
-    senha: {
+    password: {
         type: String,
         required: true
     },
@@ -18,19 +18,19 @@ const Pessoa = {
         type: Number,
         required: true
     },
-    estado: {
+    state: {
         type: String,
         required: true
     },
-    cidade:{
+    city:{
         type:String,
         required: true
     },
-    numero: {
+    number: {
         type: Number,
         required: true
     },
-    detalhe: {
+    detail: {
         type: String,
         required: true
     },
@@ -38,7 +38,7 @@ const Pessoa = {
         type: Number,
         default: 0
     },
-    isProfessor:{
+    isTeacher:{
         type: Number,
         default: 0
     },
@@ -54,4 +54,4 @@ const Pessoa = {
     }
 }
 
-mongoose.model("pessoas",Pessoa)
+mongoose.model("peoples",People)
