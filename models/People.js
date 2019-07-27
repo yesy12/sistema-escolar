@@ -14,6 +14,10 @@ const People = {
         type: String,
         required: true
     },
+    email:{
+        type:String,
+        required:true
+    },
     cpf: {
         type: Number,
         required: true
@@ -21,6 +25,10 @@ const People = {
     cep:{
         type: Number,
         required: true
+    },
+    address:{
+        type:String,
+        required:true
     },
     state: {
         type: String,
@@ -31,12 +39,10 @@ const People = {
         required: true
     },
     number: {
-        type: Number,
-        required: true
+        type: Number
     },
     detail: {
         type: String,
-        required: true
     },
     isAdmin:{
         type: Number,
