@@ -18,6 +18,10 @@ const People = {
         type: Number,
         required: true
     },
+    cep:{
+        type: Number,
+        required: true
+    },
     state: {
         type: String,
         required: true

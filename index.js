@@ -25,7 +25,6 @@ app.use(bodyParser.json())
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 const authLink = require("./config/auth").link;
-console.log(authLink)
 mongoose.connect(authLink,{useNewUrlParser: true})
 .then(()=>{
     console.log("Connect on Mongodb")

@@ -1,7 +1,13 @@
+//Express
 const express = require("express")
-
 const router = express.Router();
 
+//Mongodb
+const mongoose = require("mongoose");
+require("../models/People")
+const People = mongoose.model("peoples")
+
+//Routes
 router.get("/",(req,resp)=>{
     resp.render("index",{
         title : "Sistema Escolar",
@@ -35,15 +41,15 @@ router.post("/cadastro",(req,resp)=>{
     var detalhe = req.body.detalhe;
 
     const newPeople = {
-        nome,
-        sobrenome,
-        senha,
-        cpf,
-        cep,
-        estado,
-        cidade,
-        numero,
-        detalhe
+        name : nome,
+        lastName : sobrenome,
+        password : senha,
+        cpf : cpf,
+        cep : cep,
+        state  : estado,
+        city : cidade,
+        number : numero,
+        detail : detalhe
     }
 
     new People(newPeople).save()
@@ -59,7 +65,6 @@ router.post("/cadastro",(req,resp)=>{
         })
     })
 
-    resp.redirect("/login")
 })
 
 
