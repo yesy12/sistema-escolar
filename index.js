@@ -23,6 +23,9 @@ app.use(bodyParser.json())
 
 //Mongoose
 const mongoose = require("mongoose");
+mongoose.Promise = global.Promise;
+const authLink = require("./config/auth").link;
+console.log(authLink)
 
 //Routes
 const urls = require("./routes/urls");
